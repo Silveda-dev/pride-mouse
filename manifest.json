@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "pride-mouse",
+    "version": "1.0",
+
+    "description": "Adds a mouse trail using the lesbian pride flag.",
+
+    "icons": {
+        "48": "icons/lesbian-48.png"
+    },
+
+    "content-scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["pride-mouse.js"]
+        }
+    ]
+}
