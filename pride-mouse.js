@@ -11,10 +11,12 @@ addEventListener("mousemove", (event) => {
 });
 
 function spawnFlag(mouse_x,mouse_y) {
+    let i = flags.length
     let flag = new Image(20,10);
     flag.src = "lesbian-48.svg";
     flag.top = 5 + mouse_y + "px";
     flag.left = 2 + mouse_x + "px";
     flags.push(flag);
     document.body.appendChild(flag);
+    console.log(flags);
 }
