@@ -6,7 +6,7 @@
     "description": "Adds a mouse trail using the lesbian pride flag.",
 
     "icons": {
-        "48": "icons/lesbian-48.png"
+        "48": "lesbian-48.svg"
     },
 
     "content-scripts": [
