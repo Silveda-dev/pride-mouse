@@ -16,6 +16,8 @@ function spawnFlag(mouse_x,mouse_y) {
     flag.src = "lesbian-48.svg";
     flag.top = 5 + mouse_y + "px";
     flag.left = 2 + mouse_x + "px";
+    console.log(flag.top);
+    console.log(flag.left);
     flags.push(flag);
     document.body.appendChild(flag);
     console.log(flags);
