@@ -3,16 +3,16 @@ let y = 0;
 let flags = [];
 
 addEventListener("mousemove", (event) => {
+    deleteFlags();
     x = event.offsetX;
     y = event.offsetY;
     console.log(x);
     console.log(y);
     spawnFlag(x,y);
-    deleteFlags(flags);
 });
 
 function spawnFlag(mouse_x,mouse_y) {
-    let i = flags.length
+    let i = flags.length;
     let flag = new Image(20,10);
     flag.src = "lesbian-48.svg";
     flag.top = 5 + mouse_y + "px";
@@ -24,14 +24,10 @@ function spawnFlag(mouse_x,mouse_y) {
     console.log(flags);
 };
 
-function deleteFlags(flags) {
-    for (let i = 0; i < flags.length; i++) {
-        if (flags[i].top < (y - 10) || flags[i].top > (y + 10)) {
-            flags[i].remove();
-            console.log("Removed!");
-        } else if (flags[i].left < (x - 10) || flags[i].left > (x + 10)) {
-            flags[i].remove();
-            console.log("Removed!");
-        }
+function deleteFlags() {
+    while (flags.length > 2) {
+        flags[0].remove();
+        flags.splice(0,1);
+        console.log("Removed!");
     }
 }
