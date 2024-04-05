@@ -16,7 +16,7 @@ function update_mouse(e) {
     mouse_x = e.clientX;
     mouse_y = e.clientY;
     console.log("Mouse position: ", mouse_x, mouse_y);
-    flag.style.left = mouse_x + "px";
-    flag.style.top = mouse_y + "px";
+    flag.style.left = mouse_x - 10 + "px";
+    flag.style.top = mouse_y - 10 + "px";
     document.getElementById("bod").appendChild(flag);
 };
