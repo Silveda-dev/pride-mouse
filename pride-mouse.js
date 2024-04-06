@@ -14,7 +14,6 @@ class Flag {
         this.src = "lesbian.svg";
         this.x_pos = mouse_x - 10;
         this.y_pos = mouse_y - 10;
-        //this.i = 0;
         this.flaggy;
         this.height = "24px";
         this.width = "36px";
@@ -31,6 +30,12 @@ class Flag {
         this.flaggy.style.top = this.y_pos + "px";
         document.getElementsByTagName("body")[0].appendChild(this.flaggy); 
     }
+    update() {
+        this.x_pos += ((mouse_x - 10 - this.x_pos)/5);
+        this.y_pos += ((mouse_y - 10 - this.y_pos)/5);
+        this.flaggy.parentNode.removeChild(this.flaggy);
+        this.print();
+    }
 };
 
 
@@ -45,4 +50,7 @@ function update_flags() {
         flag_list[0].flaggy.parentNode.removeChild(flag_list[0].flaggy);
         flag_list.splice(0,1);
     }
+    for (let i = 0; i < flag_list.length; i++) {
+        flag_list[i].update();
+    };
 }
