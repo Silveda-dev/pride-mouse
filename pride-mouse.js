@@ -1,5 +1,4 @@
 //Pride mouse trail code
-document.body.id = "bod";
 var mouse_x = 0, mouse_y = 0;
 document.addEventListener("mousemove", update_mouse);
 
@@ -30,7 +29,7 @@ class Flag {
         this.flaggy.style.position = "absolute";
         this.flaggy.style.left = this.x_pos + "px";
         this.flaggy.style.top = this.y_pos + "px";
-        document.getElementById("bod").appendChild(this.flaggy); 
+        document.getElementsByTagName("body")[0].appendChild(this.flaggy); 
     }
 };
 
