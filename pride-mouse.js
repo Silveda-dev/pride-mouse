@@ -6,7 +6,7 @@ document.addEventListener("mousemove", update_mouse);
 function update_mouse(e) {       
     mouse_x = e.clientX;
     mouse_y = e.clientY;
-    tester.update();
+    update_flags();
 };
 
 //Defining flag as an object
@@ -15,19 +15,12 @@ class Flag {
         this.src = "lesbian.svg";
         this.x_pos = mouse_x - 10;
         this.y_pos = mouse_y - 10;
-        this.i = 0;
+        //this.i = 0;
         this.flaggy;
         this.height = "24px";
         this.width = "36px";
         this.print();
         console.log(this.x_pos, this.y_pos);
-    };
-    update() {
-        this.x_pos = this.x_pos + (mouse_x - this.x_pos)/2;
-        this.y_pos = this.y_pos + (mouse_y - this.y_pos)/2;
-        console.log(this.x_pos, this.y_pos);
-        this.i++;
-        this.print();
     };
     print() {
         this.flaggy = document.createElement("img");
@@ -41,4 +34,16 @@ class Flag {
     }
 };
 
-tester = new Flag();
+
+flag_list = [];
+
+function update_flags() {
+    console.log(flag_list.length);
+    if (flag_list.length < 5) {
+        flag_list.push(new Flag);
+    } else {
+        console.log(flag_list[0].flaggy);
+        flag_list[0].flaggy.parentNode.removeChild(flag_list[0].flaggy);
+        flag_list.splice(0,1);
+    }
+}
