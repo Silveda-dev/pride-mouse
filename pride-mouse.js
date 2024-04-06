@@ -39,32 +39,6 @@ class Flag {
         this.flaggy.style.top = this.y_pos + "px";
         document.getElementById("bod").appendChild(this.flaggy); 
     }
-    
-    /*this.src = "lesbian.svg";
-    this.x = 0;
-    this.y = 0;
-    init: function() {
-        this.x = mouse_x - 10;
-        this.y = mouse_y - 10;
-        flag.style.left = this.x + "px";
-        flag.style.top = this.y + "px";
-        document.getElementById("bod").appendChild(flag);
-    },
-    update: function() {
-        flag.style.left = mouse_x + ((mouse_x - this.x)/2) + "px";
-        flag.style.top = mouse_y + ((mouse_y - this.y)/2) + "px";
-    },
-} */
 };
 
 tester = new Flag();
-
-//Initialising image
-
-/*var flag = document.createElement("img");
-flag.src = "lesbian.svg";
-flag.style.height = "36px";
-flag.style.width = "24px";
-flag.style.position = "absolute";*/
-
-//Track mouse coordinates
